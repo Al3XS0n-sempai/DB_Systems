@@ -1,0 +1,36 @@
+-------insert----------
+db.uber.insert(
+    {
+        "_id": {
+            "$oid": "642dfb73cf6f3cd5c754c4a7"
+        },
+        "Dispatching_base_num": "B099AA",
+        "Pickup_date":" 2013-01-18T12:15:39.000+00:00",
+        "Affiliated_base_num": "B09999"
+    }
+)
+
+--------READ-------------
+db.uber.find(
+    {
+        "Dispatching_base_num": "B099AA"
+    }
+)
+
+
+--------UPDATE----------
+Вообще через mongo compass
+db.uber.findAndModify(
+    {
+        query: { "Dispatching_base_num": "B099AA" },
+        update: { $set: { "Affiliated_base_num": "B00000" } }
+    }
+)
+
+-----------DELETE-------------
+Вообще через mongo compass
+db.uber.deleteOne(
+    {
+        "Dispatching_base_num": "B099AA"
+    }
+)
